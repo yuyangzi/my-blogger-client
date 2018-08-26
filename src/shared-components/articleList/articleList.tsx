@@ -18,20 +18,13 @@ for (let i = 0; i < 23; i++) {
 class ArticleList extends React.Component {
 
     public render() {
-        return <List
-            itemLayout="vertical"
-            size="large"
-            pagination={{
-                pageSize: 3,
-            }}
-            dataSource={listData}
-            footer={<div><b>ant design</b> footer part</div>}
-            renderItem={this.renderItemFn}
-        />
+        return <List itemLayout="vertical" size="large"
+                     dataSource={listData}
+                     renderItem={this.renderItemFn}/>
     }
 
     private renderItemFn = (item: IArticleListDataModal) => {
-       return <ArticleListItem data={item}/>
+        return <ArticleListItem data={item}/>
     };
 
 }

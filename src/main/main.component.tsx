@@ -1,12 +1,21 @@
-import {Breadcrumb, Icon, Layout, Menu} from 'antd';
+import {Avatar, Icon, Layout, Menu} from 'antd';
 import * as React from 'react';
+import {Redirect, Route, RouteComponentProps, Switch, withRouter} from "react-router-dom";
+import ArticleContentComponent from "../articleContent/article-content.component";
 import ArticleList from '../shared-components/articleList/articleList'
 import './main.component.css';
 
 const {Header, Content, Footer, Sider} = Layout;
 const SubMenu = Menu.SubMenu;
 
-class Main extends React.Component {
+interface INotFoundPageContainerRouterProps {
+    history: any;
+}
+
+interface INotFoundPageContainerProps extends RouteComponentProps<INotFoundPageContainerRouterProps> {
+}
+
+class Main extends React.Component<INotFoundPageContainerProps, any> {
     public state = {
         collapsed: false,
     };
@@ -15,40 +24,31 @@ class Main extends React.Component {
         this.setState({collapsed});
     };
 
+    public handleSelect = (path: '/home') => {
+        this.props.history.push(path);
+    };
+
     public render() {
         return (
             <Layout style={{minHeight: '100vh', width: '1000px', margin: '0 auto'}}>
                 <Sider style={{overflow: 'auto', height: '100vh', position: 'fixed'}}
                        collapsible={false} collapsed={this.state.collapsed} onCollapse={this.onCollapse}>
-                    <div className="logo"/>
+                    <Avatar size={140} src={'https://avatars3.githubusercontent.com/u/23147062?s=460&v=4'}
+                            style={{display: 'block', margin: '20px auto'}}/>
                     <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
-                        <Menu.Item key="1">
-                            <Icon type="pie-chart"/>
-                            <span>Option 1</span>
+                        <Menu.Item key="1" onClick={this.handleSelect.bind(this, '/home')}>
+                            <Icon type="home"/>
+                            <span>首页</span>
                         </Menu.Item>
                         <Menu.Item key="2">
-                            <Icon type="desktop"/>
-                            <span>Option 2</span>
+                            <Icon type="tag-o"/>
+                            <span>标签</span>
                         </Menu.Item>
-                        <SubMenu
-                            key="sub1"
-                            title={<span><Icon type="user"/><span>User</span></span>}
-                        >
-                            <Menu.Item key="3">Tom</Menu.Item>
-                            <Menu.Item key="4">Bill</Menu.Item>
-                            <Menu.Item key="5">Alex</Menu.Item>
+                        <SubMenu key="sub1" title={<span><Icon type="user"/><span>分类</span></span>}>
+                            <Menu.Item key="3">JavaScript</Menu.Item>
+                            <Menu.Item key="4">区块链</Menu.Item>
+                            <Menu.Item key="5">HTTP网络协议</Menu.Item>
                         </SubMenu>
-                        <SubMenu
-                            key="sub2"
-                            title={<span><Icon type="team"/><span>Team</span></span>}
-                        >
-                            <Menu.Item key="6">Team 1</Menu.Item>
-                            <Menu.Item key="8">Team 2</Menu.Item>
-                        </SubMenu>
-                        <Menu.Item key="9">
-                            <Icon type="file"/>
-                            <span>File</span>
-                        </Menu.Item>
                     </Menu>
                 </Sider>
                 <Layout style={{marginLeft: 200}}>
@@ -56,12 +56,12 @@ class Main extends React.Component {
                         <h1>王宜明的博客空间</h1>
                     </Header>
                     <Content style={{margin: '0 16px'}}>
-                        <Breadcrumb style={{margin: '16px 0'}}>
-                            <Breadcrumb.Item>User</Breadcrumb.Item>
-                            <Breadcrumb.Item>Bill</Breadcrumb.Item>
-                        </Breadcrumb>
                         <div style={{padding: 24, background: '#fff', minHeight: 360}}>
-                            <ArticleList/>
+                            <Switch>
+                                <Route exact={true} path="/" component={ArticleList}/>
+                                <Route exact={true} path="/Article" component={ArticleContentComponent}/>
+                                <Redirect to={'/'}/>
+                            </Switch>
                         </div>
                     </Content>
                     <Footer style={{textAlign: 'center'}}>
@@ -73,4 +73,4 @@ class Main extends React.Component {
     }
 }
 
-export default Main;
+export default withRouter(Main);
