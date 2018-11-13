@@ -1,0 +1,67 @@
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.text-nowrap {
+    white-space: nowrap;
+}
+
+.text-lowercase {
+    text-transform: lowercase;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.text-capitalize {
+    text-transform: capitalize;
+}
+
+.center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.pullquote {
+    width: 45%;
+}
+
+.pullquote.left {
+    float: left;
+    margin-left: 5px;
+    margin-right: 10px;
+}
+
+.pullquote.right {
+    float: right;
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
+.affix.affix.affix {
+    position: fixed;
+}
