@@ -1,6 +1,7 @@
 import React, {PureComponent} from "react";
 import NavComponent from "../nav/nav.component";
 import LinksOfAuthorComponent from "../links-of-author/links-of-author.component";
+import "./sidebar.component.css"
 
 class SidebarComponent extends PureComponent {
     render() {
