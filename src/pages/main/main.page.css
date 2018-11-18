@@ -39,3 +39,31 @@
         width: auto;
     }
 }
+
+.content-wrap {
+    float: right;
+    box-sizing: border-box;
+    padding: 40px;
+    width: 700px;
+    background: #fff;
+    min-height: 700px;
+    box-shadow: initial;
+    border-radius: initial;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .content-wrap {
+        width: 100%;
+        padding: 20px;
+        border-radius: initial;
+    }
+}
+
+@media (max-width: 767px) {
+    .content-wrap {
+        width: 100%;
+        padding: 20px;
+        min-height: auto;
+        border-radius: initial;
+    }
+}

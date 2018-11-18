@@ -1,8 +1,8 @@
 import React, {PureComponent} from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {ArticleSummaryMetaModel} from "../../article-summary.model";
+import {ArticleSummaryMetaComponentDataModel} from "../article.model";
 
-class ArticleSummaryItemMetaComponent extends PureComponent<ArticleSummaryMetaModel> {
+class ArticleSummaryItemMetaComponent extends PureComponent<ArticleSummaryMetaComponentDataModel> {
     render() {
         return (
             <>
