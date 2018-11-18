@@ -1,1 +1,1 @@
-import './font-config/font-config';
+import './font-config/font-config'
