@@ -1,6 +1,7 @@
 import React, {PureComponent} from "react";
 import MenuComponent from "../../component/menu/menu.component";
 import {MenuModel} from "../../component/menu/menu.model";
+import {RouteComponentProps, withRouter} from "react-router";
 
 const menuList: MenuModel[] = [
     {icon: 'home', text: '首页'},
@@ -11,7 +12,14 @@ const menuList: MenuModel[] = [
     {icon: 'search', text: '搜索'},
 ];
 
-class HeaderPage extends PureComponent {
+class HeaderPage extends PureComponent<RouteComponentProps> {
+
+    goHome(event: MouseEvent) {
+        event.stopPropagation();
+        event.defaultPrevented;
+        this.props.history.push('/')
+    }
+
     render() {
         return (
             <header className="header" itemScope itemType="http://schema.org/WPHeader">
@@ -19,7 +27,7 @@ class HeaderPage extends PureComponent {
                     <div className="site-brand-wrapper">
                         <div className="site-meta ">
                             <div className="custom-logo-site-title">
-                                <a href="/" className="brand" rel="start">
+                                <a href="/" className="brand" rel="start" onClick={e => this.goHome.bind(this, e)}>
                                     <span className="logo-line-before"><i/></span>
                                     <span className="site-title">王宜明的博客空间</span>
                                     <span className="logo-line-after"><i/></span>
@@ -43,4 +51,4 @@ class HeaderPage extends PureComponent {
     }
 }
 
-export default HeaderPage;
+export default withRouter(HeaderPage);
