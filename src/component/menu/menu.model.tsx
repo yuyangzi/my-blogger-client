@@ -1,6 +1,7 @@
-import {IconProp} from "@fortawesome/fontawesome-svg-core";
+import { IconProp } from '@fortawesome/fontawesome-svg-core'
 
 export interface MenuModel {
-    icon: IconProp,
+    icon: IconProp
     text: string
+    url: string
 }

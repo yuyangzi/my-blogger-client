@@ -1,18 +1,10 @@
-import React, {PureComponent} from "react";
-import HeaderPage from "../header/header.page";
-import MainPage from "../main/main.page";
-import FooterPage from "../footer/footer.page";
+import React, { PureComponent } from 'react'
+import MainPage from '../main/main.page'
 
 class HomePage extends PureComponent {
     render() {
-        return (
-            <>
-                <HeaderPage/>
-                <MainPage/>
-                <FooterPage/>
-            </>
-        )
+        return <MainPage />
     }
 }
 
-export default HomePage;
+export default HomePage
