@@ -1,4 +1,4 @@
-import { library } from '@fortawesome/fontawesome-svg-core';
+import { library } from '@fortawesome/fontawesome-svg-core'
 import {
   faArchive,
   faCalendar,
@@ -12,8 +12,9 @@ import {
   faHome,
   faSearch,
   faTags,
-  faTh
-} from '@fortawesome/free-solid-svg-icons';
+  faTh,
+  faEdit,
+} from '@fortawesome/free-solid-svg-icons'
 
 const fontIcons = [
   faHome,
@@ -28,7 +29,8 @@ const fontIcons = [
   faClock,
   faFolder,
   faChevronLeft,
-  faChevronRight
-];
+  faChevronRight,
+  faEdit,
+]
 
-library.add(...fontIcons);
+library.add(...fontIcons)

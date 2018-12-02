@@ -1,10 +1,10 @@
-import React, { PureComponent } from 'react'
+import React, { Component } from 'react'
 import MainPage from '../main/main.page'
 
-class HomePage extends PureComponent {
-    render() {
-        return <MainPage />
-    }
+class HomePage extends Component {
+  render() {
+    return <MainPage />
+  }
 }
 
 export default HomePage
