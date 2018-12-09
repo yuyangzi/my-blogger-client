@@ -1,7 +1,11 @@
 import React, { PureComponent } from 'react'
 import { Link } from 'react-router-dom'
 
-class TagDetailItemComponent extends PureComponent {
+class TagDetailItemComponent extends PureComponent<{
+  title: string
+  data: string
+  id: string
+}> {
   render(): React.ReactNode {
     return (
       <article

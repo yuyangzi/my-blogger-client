@@ -11,7 +11,7 @@ class TagDetailComponent extends PureComponent<{ tagName: string }> {
             <small>标签</small>
           </h2>
         </div>
-        <TagDetailItemComponent />
+        <TagDetailItemComponent title={''} data={''} id={''} />
       </div>
     )
   }
