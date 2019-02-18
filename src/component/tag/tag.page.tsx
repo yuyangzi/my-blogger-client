@@ -14,7 +14,6 @@ class TagPage extends Component<IComponentProps, { tagName: string | null }> {
     const params = new URLSearchParams(location.search)
     this.state = { tagName: params.get('name') }
     this.unListen = this.props.history.listen(() => {
-      console.log('a')
       const params = new URLSearchParams(location.search)
       this.setState({
         tagName: params.get('name'),
